@@ -13,7 +13,7 @@
   - ☑️ It is forbidden to use anonymous authentication, except for / healthz, / readyz, / livez. Exceptions should be agreed upon with the security team.
   - ☑️ Cluster administrators and maintainers should interact with the cluster API and infrastructure services through privileged access management systems  (teleport, boundary, and so on).
   - ☑️ All information systems should be divided into separate namespaces. It is recommended to avoid the situation when the same maintainer team is responsible for different namespaces.
-  - **Secure work with secrets**
+- **Secure work with secrets**
   - ☑️ Secrets should be stored in third-party storage (Vault), or in etcd in encrypted form.
   - ☑️ Secrets should be added to the container using the volumeMount mechanism or the secretKeyRef mechanism. For hiding secrets in source codes, for example, the sealed-secret tool can be used.
 - **Cluster Configuration Security**
@@ -31,7 +31,7 @@
   - ☑️ The audit logging system should be located outside the Kubernetes cluster.
   - ☑️ Use third-party security monitoring solution on all nodes (Falco, Sysdig, Aqua, and so on).
 - **Security of OS configuration**
- - ☑️ Host administrators and maintainers should interact with cluster nodes through privileged access management systems (or bastion hosts).
+  - ☑️ Host administrators and maintainers should interact with cluster nodes through privileged access management systems (or bastion hosts).
   - ☑️ It is recommended to configure the OS and software following the baseline and standards (CIS, NIST).
   - ☑️ It is recommended to regularly scan packages for vulnerabilities.
   - ☑️ It is recommended to regularly update the OS kernel version.
@@ -42,7 +42,7 @@
   - ☑️ Infrastructure services, control plane, and data storage should be located in a separate VLAN on isolated nodes.
   - ☑️ External user traffic passing into the cluster should be inspected using WAF.
   - ☑️ It is recommended to separate the cluster nodes interacting with the Internet (DMZ) from the cluster nodes interacting with internal services. Delimitation can be within one cluster, or within two different clusters (DMZ and VLAN).
-  - **Security configuration of workloads**
+ - **Security configuration of workloads**
   - ☑️ It is forbidden to run pods under the root account - UID 0.
   - ☑️ Set runAsUser parameter for all applications.
   - ☑️ Set "allowPrivilegeEscalation - false".
