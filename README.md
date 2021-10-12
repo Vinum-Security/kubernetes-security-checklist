@@ -1,4 +1,7 @@
-# Kubernetes Security Checklist and Requirements - All in One
+# Kubernetes Security Checklist and Requirements
+
+There are many ways to make your cluster secure, but we have chosen only one, the most difficult and controversial in some places. We do not guarantee that it will be completely suitable for your infrastructure, but we hope this checklist can help you include those things that you may have forgotten and left out.
+
 
 ![Docker Security Guide копия](https://user-images.githubusercontent.com/34271513/136924844-1bb4d2c5-1f23-4c71-91b5-499e7f7f533d.png)
 
@@ -84,7 +87,7 @@
   - ☑️ The port range forwarded into the container should be minimal enough to work. 
   - ☑️ It is recommended to use ```dockerignore``` to prevent putting sensitive information inside the image.
   - ☑️ It is recommended to use a minimum number of layers using a multi-stage build.
-  - ☑️ It is recommended to use ```WORKDIR``` as an absolute path. It is not recommended to use cd instead of ```WORKDIR```.
+  - ☑️ It is recommended to use ```WORKDIR``` as an absolute path. It is not recommended to use ```cd``` instead of ```WORKDIR```.
   - ☑️ When downloading packages from the Internet during the build process, it is recommended to check the integrity of these packages.
   - ☑️ It is recommended to beware of recursive copying using ```COPY . ..```
   - ☑️ It is forbidden to run remote control tools in a container.
