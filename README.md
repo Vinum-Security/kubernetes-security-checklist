@@ -12,7 +12,7 @@
   - ☑️ All services should have a unique service account with configured RBAC rights.
   - ☑️ Developers should not have access to a production environment without the approval of the security team.
   - ☑️ It is forbidden to use user impersonation (the ability to perform actions under other accounts).
-  - ☑️ It is forbidden to use anonymous authentication, except for / healthz, / readyz, / livez. Exceptions should be agreed upon with the security team.
+  - ☑️ It is forbidden to use anonymous authentication, except for ```/healthz```, ```/readyz```, ```/livez```. Exceptions should be agreed upon with the security team.
   - ☑️ Cluster administrators and maintainers should interact with the cluster API and infrastructure services through privileged access management systems  (teleport, boundary, and so on).
   - ☑️ All information systems should be divided into separate namespaces. It is recommended to avoid the situation when the same maintainer team is responsible for different namespaces.
 - **Secure work with secrets**
@@ -46,47 +46,47 @@
   - ☑️ It is recommended to separate the cluster nodes interacting with the Internet (DMZ) from the cluster nodes interacting with internal services. Delimitation can be within one cluster, or within two different clusters (DMZ and VLAN).
  - **Security configuration of workloads**
   - ☑️ It is forbidden to run pods under the root account - UID 0.
-  - ☑️ Set runAsUser parameter for all applications.
-  - ☑️ Set "allowPrivilegeEscalation - false".
-  - ☑️ It is forbidden to run the privileged pod (privileged: true).
-  - ☑️ It is recommended to set "readonlyRootFilesystem - true".
-  - ☑️ The hostPID and hostIPC parameters should be set to "false".
-  - ☑️ The hostNetwork parameter should be set to "false".
+  - ☑️ Set ```runAsUser``` parameter for all applications.
+  - ☑️ Set ```allowPrivilegeEscalation - false```.
+  - ☑️ It is forbidden to run the privileged pod (```privileged: true```).
+  - ☑️ It is recommended to set ```readonlyRootFilesystem - true```.
+  - ☑️ The ```hostPID``` and ```hostIPC``` parameters should be set to "false".
+  - ☑️ The ```hostNetwork``` parameter should be set to "false".
   - ☑️ It is forbidden to use unsafe system calls (sysctl):
-    - kernel.shm *,
-    - kernel.msg *,
-    - kernel.sem,
-    - fs.mqueue. *,
-  - ☑️ It is forbidden to use hostPath.
-  - ☑️ Use CPU / RAM limits. The values ​​should be the minimum for the containerized application to work.
+    - ```kernel.shm *```,
+    - ```kernel.msg *```,
+    - ```kernel.sem```,
+    - ```fs.mqueue. *```,
+  - ☑️ It is forbidden to use ```hostPath```.
+  - ☑️ Use CPU / RAM limits. The values should be the minimum for the containerized application to work.
   - ☑️ Capabilities should be set according to the principle of least privileges (drop 'ALL', after which all the necessary capacities for the application to work are enumerated, while it is prohibited to use:
-    - CAP_FSETID,
-    - CAP_SETUID,
-    - CAP_SETGID,
-    - CAP_SYS_CHROOT,
-    - CAP_SYS_PTRACE,
-    - CAP_CHOWN,
-    - CAP_NET_RAW,
-    - CAP_NET_ADMIN,
-    - CAP_SYS_ADMIN,
-    - CAP_NET_BIND_SERVICE)
+    - ```CAP_FSETID```,
+    - ```CAP_SETUID```,
+    - ```CAP_SETGID```,
+    - ```CAP_SYS_CHROOT```,
+    - ```CAP_SYS_PTRACE```,
+    - ```CAP_CHOWN```,
+    - ```CAP_NET_RAW```,
+    - ```CAP_NET_ADMIN```,
+    - ```CAP_SYS_ADMIN```,
+    - ```CAP_NET_BIND_SERVICE```)
   - ☑️ It is forbidden to use the default namespace (default).
   - ☑️ The application should have a seccomp, apparmor or selinux profile according to the principles of least privileges.
 - **Secure image development**
-  - ☑️ It is forbidden to use RUN construct with sudo.
-  - ☑️ It is recommended not to use the latest tag.
-  - ☑️ COPY is required instead of ADD instruction.
-  - ☑️ It is forbidden to use automatic package update via apt-get upgrade, yum update, apt-get dist-upgrade.
+  - ☑️ It is forbidden to use ```RUN``` construct with ```sudo```.
+  - ☑️ It is recommended not to use the ```latest``` tag.
+  - ☑️ ```COPY``` is required instead of ```ADD``` instruction.
+  - ☑️ It is forbidden to use automatic package update via ```apt-get upgrade```, ```yum update```, ```apt-get dist-upgrade```.
   - ☑️ It is necessary to explicitly indicate the versions of the installed packages. The SBOM building tools (syft) can be used to determine the list of packages.
   - ☑️ It is forbidden to store sensitive information (passwords, tokens, certificates) in the Dockerfile.
   - ☑️ The composition of the packages in the container image should be minimal enough to work.
-  - ☑️ It is not recommended to install wget curl netcat inside the production application image and container.
+  - ☑️ It is not recommended to install ```wget```, ```curl```, ```netcat``` inside the production application image and container.
   - ☑️ The port range forwarded into the container should be minimal enough to work. 
-  - ☑️ It is recommended to use dockerignore to prevent putting sensitive information inside the image.
+  - ☑️ It is recommended to use ```dockerignore``` to prevent putting sensitive information inside the image.
   - ☑️ It is recommended to use a minimum number of layers using a multi-stage build.
-  - ☑️ It is recommended to use WORKDIR as an absolute path. It is not recommended to use cd instead of WORKDIR.
+  - ☑️ It is recommended to use ```WORKDIR``` as an absolute path. It is not recommended to use cd instead of ```WORKDIR```.
   - ☑️ When downloading packages from the Internet during the build process, it is recommended to check the integrity of these packages.
-  - ☑️ It is recommended to beware of recursive copying using the COPY construct . ..
+  - ☑️ It is recommended to beware of recursive copying using the ```COPY``` construct ```. ..```
   - ☑️ It is forbidden to run remote control tools in a container.
   - ☑️ Based on the results of scanning Docker images, an image signature should be generated, which will be verified before deployment (Notary, Cosign).
   - ☑️ Dockerfile should be checked during development by automated scanners (kics, hadolint).
