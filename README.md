@@ -1,5 +1,7 @@
 # Kubernetes Security Checklist and Requirements - All in One
 
+![Docker Security Guide копия](https://user-images.githubusercontent.com/34271513/136924844-1bb4d2c5-1f23-4c71-91b5-499e7f7f533d.png)
+
 - **Authentication**
   - ☑️ It is recommended to use an IdP server as a provider for user authentication to the Kubernetes API (for example, using OIDC). Cluster administrators are advised not to use service account tokens for authentication.
   - ☑️ It is recommended to use a centralized certificate management service to manage certificates within the cluster (for user and service purposes).
