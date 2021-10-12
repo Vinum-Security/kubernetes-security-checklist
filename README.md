@@ -86,7 +86,7 @@
   - ☑️ It is recommended to use a minimum number of layers using a multi-stage build.
   - ☑️ It is recommended to use ```WORKDIR``` as an absolute path. It is not recommended to use cd instead of ```WORKDIR```.
   - ☑️ When downloading packages from the Internet during the build process, it is recommended to check the integrity of these packages.
-  - ☑️ It is recommended to beware of recursive copying using the ```COPY``` construct ```. ..```
+  - ☑️ It is recommended to beware of recursive copying using ```COPY . ..```
   - ☑️ It is forbidden to run remote control tools in a container.
   - ☑️ Based on the results of scanning Docker images, an image signature should be generated, which will be verified before deployment (Notary, Cosign).
   - ☑️ Dockerfile should be checked during development by automated scanners (kics, hadolint).
