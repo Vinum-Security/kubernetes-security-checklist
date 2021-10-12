@@ -35,7 +35,7 @@ There are many ways to make your cluster secure, but we have chosen only one, th
   - ☑️ All registered security events (at the cluster level and  application level both) should be sent to the centralized audit logging system (SIEM).
   - ☑️ The audit logging system should be located outside the Kubernetes cluster.
   - ☑️ Use third-party security monitoring solution on all nodes (Falco, Sysdig, Aqua, and so on).
-- **Security of OS configuration**
+- **Secure OS configuration**
   - ☑️ Host administrators and maintainers should interact with cluster nodes through privileged access management systems (or bastion hosts).
   - ☑️ It is recommended to configure the OS and software following the baseline and standards (CIS, NIST).
   - ☑️ It is recommended to regularly scan packages for vulnerabilities.
@@ -47,7 +47,7 @@ There are many ways to make your cluster secure, but we have chosen only one, th
   - ☑️ Infrastructure services, control plane, and data storage should be located in a separate VLAN on isolated nodes.
   - ☑️ External user traffic passing into the cluster should be inspected using WAF.
   - ☑️ It is recommended to separate the cluster nodes interacting with the Internet (DMZ) from the cluster nodes interacting with internal services. Delimitation can be within one cluster, or within two different clusters (DMZ and VLAN).
- - **Security configuration of workloads**
+ - **Secure configuration of workloads**
   - ☑️ It is forbidden to run pods under the root account - UID 0.
   - ☑️ Set ```runAsUser``` parameter for all applications.
   - ☑️ Set ```allowPrivilegeEscalation - false```.
