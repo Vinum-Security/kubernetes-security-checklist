@@ -11,7 +11,7 @@ There are many ways to make your cluster secure, but we have chosen only one, th
   - ☑️ User accounts should be personalized. The names of the service accounts should reflect the purpose access rights of the accounts.
 - **Authorization**
   - ☑️ For each cluster, a role-based access model should be developed.
-  - ☑️ [Role-Based Access Control (RBAC)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) should be configured for the Kubernetes cluster. Rights need to be assigned within the project namespace based on least privilege and separation of duties.
+  - ☑️ [Role-Based Access Control (RBAC)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) should be configured for the Kubernetes cluster. Rights need to be assigned within the project namespace based on least privilege and separation of duties ([RBAC-tool](https://github.com/alcideio/rbac-tool)).
   - ☑️ All services should have a unique service account with configured RBAC rights.
   - ☑️ Developers should not have access to a production environment without the approval of the security team.
   - ☑️ It is forbidden to use [user impersonation](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#user-impersonation) (the ability to perform actions under other accounts).
