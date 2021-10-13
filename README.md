@@ -36,7 +36,8 @@ There are many ways to make your cluster secure, but we have chosen only one, th
   - ☑️ Log all cases of changing parameters, system settings, or configuration of the entire cluster (including OS level).
   - ☑️ All registered security events (at the cluster level and  application level both) should be sent to the centralized audit logging system (SIEM).
   - ☑️ The audit logging system should be located outside the Kubernetes cluster.
-  - ☑️ Use third-party security monitoring tool on all cluster nodes ([Falco](https://falco.org/)).
+  - ☑️ Build observability and visibility processes in order to understand what is happening in infrastructure and services ([Luntry](https://luntry.ru/), [WaveScope](https://github.com/weaveworks/scope))
+  - ☑️ Use third-party security monitoring tool on all cluster nodes ([Falco](https://falco.org/), [Sysdig](https://sysdig.com/), [Aqua Enterpise](https://www.aquasec.com/), [NeuVector](https://neuvector.com/), [Prisma Cloud Compute](https://www.paloaltonetworks.com/prisma/cloud)).
 - **Secure OS configuration**
   - ☑️ Host administrators and maintainers should interact with cluster nodes through privileged access management systems (or bastion hosts).
   - ☑️ It is recommended to configure the OS and software following the baseline and standards ([CIS](https://www.cisecurity.org/cis-benchmarks/), [NIST](https://ncp.nist.gov/repository)).
@@ -97,3 +98,4 @@ There are many ways to make your cluster secure, but we have chosen only one, th
   - ☑️ Based on the results of scanning Docker images, an image signature should be generated, which will be verified before deployment ([Notary, Cosign](https://medium.com/sse-blog/verify-container-image-signatures-in-kubernetes-using-notary-or-cosign-or-both-c25d9e79ec45)).
   - ☑️ Dockerfile should be checked during development by automated scanners ([Kics](https://checkmarx.com/product/opensource/kics-open-source-infrastructure-as-code-project/), [Hadolint](https://github.com/hadolint/hadolint), [Conftest](https://github.com/open-policy-agent/conftest)).
   - ☑️ All images should be checked in the application lifecycle by automated scanners ([Trivy](https://github.com/aquasecurity/trivy), [Clair](https://github.com/quay/clair), [Grype](https://github.com/anchore/grype)). 
+  - ☑️ Build secure CI and CD as same as suply chain process ([SLSA](https://github.com/slsa-framework/slsa))
