@@ -6,7 +6,7 @@
   - ☑️ Пользовательские УЗ должны быть персонализированы. Названия сервисных УЗ должны отражать назначение УЗ и используемые права доступа.
 - **Авторизация**
   - ☑️ Для каждого кластера должна быть проработана ролевая модель доступа. 
-  - ☑️ Для кластера Kubernetes должен быть настроен Role-Based Access Control ([RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)). Права должны назначаться в пределах пространства имен проекта по принципу наименьших привилегий (least privilege) и разделения полномочий (seperation of duties).
+  - ☑️ Для кластера Kubernetes должен быть настроен Role-Based Access Control ([RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)). Права должны назначаться в пределах пространства имен проекта по принципу наименьших привилегий (least privilege) и разделения полномочий (seperation of duties) ([RBAC-tool](https://github.com/alcideio/rbac-tool)).
   - ☑️ Все сервисы должны обладать уникальным service account с настроенными правами RBAC.
   - ☑️ Разработчики не должны иметь доступ к препродуктивной и продуктивной среде без согласования с командой безопасности.
   - ☑️ Запрещено использовать средства [user impersonation](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#user-impersonation) (возможность выполнять действия под другой УЗ).
