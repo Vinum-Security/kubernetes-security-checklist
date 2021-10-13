@@ -99,3 +99,13 @@ There are many ways to make your cluster secure, but we have chosen only one, th
   - ☑️ Dockerfile should be checked during development by automated scanners ([Kics](https://checkmarx.com/product/opensource/kics-open-source-infrastructure-as-code-project/), [Hadolint](https://github.com/hadolint/hadolint), [Conftest](https://github.com/open-policy-agent/conftest)).
   - ☑️ All images should be checked in the application lifecycle by automated scanners ([Trivy](https://github.com/aquasecurity/trivy), [Clair](https://github.com/quay/clair), [Grype](https://github.com/anchore/grype)). 
   - ☑️ Build secure CI and CD as same as suply chain process ([SLSA](https://github.com/slsa-framework/slsa))
+
+#
+<a href="https://kubernetes.io/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1200px-Telegram_2019_Logo.svg.png"
+         alt="Kubernetes logo" title="Kubernetes" height="50" width="50" />
+</a></br>
+
+## Feedback
+- Our Telegram-chat: [DevSecOps Chat](https://t.me/sec_devops_chat)
+- Our Twitter: [@vinumsec](https://twitter.com/vinumsec)
