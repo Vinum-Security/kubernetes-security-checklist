@@ -24,10 +24,10 @@ There are many ways to make your cluster secure, but we have chosen only one, th
   - [ ] Secrets should be added to the container using the volumeMount mechanism or the secretKeyRef mechanism. For hiding secrets in source codes, for example, the [sealed-secret](https://github.com/bitnami-labs/sealed-secrets) tool can be used.
 - **Cluster Configuration Security**
   - [ ] Use TLS encryption between all cluster components.
-  - [ ] Use Policy engine ([OPA](https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/), [Kyverno](https://kyverno.io/)).
+  - [ ] Use Policy engine ([OPA](https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/), [Kyverno](https://kyverno.io/), [jsPolicy](https://www.jspolicy.com), [Kubewarden](https://www.kubewarden.io)).
   - [ ] The cluster configuration is recommended to comply with [CIS Benchmark](https://www.cisecurity.org/benchmark/kubernetes/) except for [PSP requirements](https://kubernetes.io/blog/2021/04/06/podsecuritypolicy-deprecation-past-present-and-future/).
   - [ ] It is recommended to use only the latest versions of cluster components ([CVE list](https://www.container-security.site/general_information/container_cve_list.html)).
-  - [ ] For services with increased security requirements, it is recommended to use a low-level run-time with a high degree of isolation ([gVisior](https://gvisor.dev/docs/user_guide/quick_start/kubernetes/), [Kata-runtime](https://github.com/kata-containers/documentation/blob/master/how-to/run-kata-with-k8s.md)).
+  - [ ] For services with increased security requirements, it is recommended to use a low-level run-time with a high degree of isolation ([gVisor](https://gvisor.dev/docs/user_guide/quick_start/kubernetes/), [Kata-runtime](https://github.com/kata-containers/documentation/blob/master/how-to/run-kata-with-k8s.md)).
   - [ ] Cluster Configuration should be audited regularly ([Kube-bench](https://github.com/aquasecurity/kube-bench), [Kube-hunter](https://github.com/aquasecurity/kube-hunter), [Kubestriker](https://www.kubestriker.io/))
 - **Audit and Logging**
   - [ ] Log all cases of changing access rights in the cluster.
